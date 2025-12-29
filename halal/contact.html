@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+  @font-face {
+    font-family:VNVOGU;
+    src: url('VNVOGU.TTF');
+  }
+  body{
+    background-color: black;
+  }
+  .nav {
+    z-index: 4;
+    left: -10px;
+    position: fixed;
+    top: 0;
+    width: 110%;
+    height: fit-content;
+    background-color: rgba(0, 0, 0, 0.345);
+    display: flex;
+  }
+
+
+  .nav a {
+    border-radius: 35px;
+    padding-left: 2mm;
+    padding-right: 2mm;
+    padding-top: 2mm;
+    height: 30.400px;
+    text-decoration: none;
+    text-align: center;
+    width: 10%;
+    color: grey;
+    background-color: rgba(0, 0, 0, 0);
+    font-weight: bold;
+    font-family: sans-serif;
+    transition: 0.4s;
+  }
+
+  .nav a:hover {
+    color: black;
+    background-color: rgba(155, 155, 155, 0.7);
+  }
+
+  .links{
+    display: inline-block;
+    opacity: 1;
+    position: absolute;
+    width: 15vw;
+    height: 10vh;
+    background-color: none;
+    display: block;   
+    top: 35vh;
+    left: 70vw;
+    animation: appear 1s ease forwards;
+    animation-play-state: paused;
+
+  }
+
+  .links a{
+    font-family: VNVOGU;
+    display: inline-block;
+    margin: 10px;
+    text-decoration: none;
+    position: relative;
+    opacity: 1;
+    color: white;
+    font-size: 20px;
+
+      background: linear-gradient(
+    270deg,
+    red,
+    orange,
+    yellow,
+    green,
+    cyan,
+    blue,
+    violet
+  );
+
+  background-size: 400% 400%;
+  background-clip: text;
+  animation: rainbow 1s linear infinite;
+  animation-play-state: paused;
+
+  }
+
+  .links a:hover{
+    color: transparent;
+    animation-play-state: running;
+  }
+
+
+  .links.play{
+    animation-play-state: running;
+  }
+  .logos{
+    left: -100px;
+    margin: 0;
+    position: absolute;
+    width: calc(1920px/1.6);
+    height: calc(1080px/1.6);
+  }
+
+
+  @keyframes appear{
+    from{
+      opacity: 0;
+      transform:translateY(100px) ;
+    }
+    to{
+      opacity: 1;
+      transform:translateY(0px);
+    }
+
+
+  }
+  
+@keyframes rainbow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+</style>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="nav">
+    <!-- This is the menu bar -->
+    <a class="menu" href="index.html">home</a>
+    <a class="menu" href="price.html">prices</a>
+  </div>
+    <video autoplay loop muted  class="logos">
+      <source src="everything_1.webm" type="video/webm" >
+    </video>
+
+  <div class="links">
+    <a href="https://mail.google.com/mail/?view=cm&to=garvurslyinteresting@gmail.com">EEEEEEEEEEEEEEEEEEEEmail</a>
+    <a href="https://www.instagram.com/gravusdostuff/" style="font-size: 30px;">Feed da fish</a>
+    
+
+  </div>
+  <div>
+    
+  </div>
+  <script src="contact.js">
+  </script>
+
+
+</body>
+
+
+</html>
