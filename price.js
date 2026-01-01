@@ -28,6 +28,22 @@ if (D3) {
   });
 }
 
+let clickLocked = false;
+
+lefty.addEventListener('click', () => {
+  if (clickLocked) return;
+
+  clickLocked = true;
+
+
+  lefty.play();
+
+
+  setTimeout(() => {
+    clickLocked = false;
+  }, 3000); 
+});
+
 
 // arg
 lefty.addEventListener('click', () => {
@@ -48,22 +64,32 @@ lefty.addEventListener('click', () => {
 liftleft.addEventListener('ended', () => {
   lefty.remove();
   liftleft.remove();
-  liftleft.currentTime = 0;
+
   liftleft.pause();
-  D2.style.opacity = 0;
-  D2.style.pointerEvents = "none";
+  liftleft.currentTime = 0;
+
+  if (D2) {
+    D2.style.opacity = 0;
+    D2.style.pointerEvents = "none";
+  }
+
   if (scaleContainer) {
     scaleContainer.appendChild(righty);
     scaleContainer.appendChild(liftright);
-    righty.currentTime = 0;
+
     righty.pause();
-    liftright.currentTime = 0;
+    righty.currentTime = 0;
+    righty.load();
+
     liftright.pause();
+    liftright.currentTime = 0;
+    liftright.load();
 
     righty.style.opacity = 1;
     liftright.style.opacity = 0;
   }
 });
+
 
 righty.addEventListener('click', () => {
   if (righty.ended) {
@@ -83,22 +109,32 @@ righty.addEventListener('click', () => {
 liftright.addEventListener('ended', () => {
   righty.remove();
   liftright.remove();
-  liftright.currentTime = 0;
+
   liftright.pause();
-  D3.style.opacity = 0;
-  D3.style.pointerEvents = "none";
+  liftright.currentTime = 0;
+
+  if (D3) {
+    D3.style.opacity = 0;
+    D3.style.pointerEvents = "none";
+  }
+
   if (scaleContainer) {
     scaleContainer.appendChild(lefty);
     scaleContainer.appendChild(liftleft);
-    lefty.currentTime = 0;
+
     lefty.pause();
-    liftleft.currentTime = 0;
+    lefty.currentTime = 0;
+    lefty.load();          // ← THIS is what you were missing
+
     liftleft.pause();
+    liftleft.currentTime = 0;
+    liftleft.load();       // ← do it here too
 
     lefty.style.opacity = 1;
     liftleft.style.opacity = 0;
   }
 });
+
 
 
 
