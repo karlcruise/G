@@ -339,7 +339,16 @@ animborders.forEach((border) => {
       menu5.classList.add('play');
       menu5.style.display = 'flex';
       document.documentElement.style.setProperty('--op', '1');
-    }else if (border.id === 'desert') {
+    }
+    else if (border.id === 'city') {
+      // Toggle menu6
+      menu6.classList.add('play');
+      menu6.style.display = 'flex';
+      document.documentElement.style.setProperty('--op', '1');
+    }
+    // D3D and D2D
+    
+    else if (border.id === 'desert') {
       // Toggle menu7(layers2)
       menu7.classList.add('play');
       menu7.style.display = 'flex';
@@ -355,7 +364,7 @@ animborders.forEach((border) => {
       menu9.style.display = 'flex';
       document.documentElement.style.setProperty('--op', '1');
     }else if (border.id === 'beach') {
-      // Toggle menu9(layers2)
+      // Toggle menu10(layers2)
       menu10.classList.add('play');
       menu10.style.display = 'flex';
       document.documentElement.style.setProperty('--op', '1');
